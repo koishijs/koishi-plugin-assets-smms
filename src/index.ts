@@ -1,4 +1,4 @@
-import { Assets, Context, Schema, Requester } from 'koishi'
+import { Assets, Context, Schema, Quester } from 'koishi'
 import { createHash } from 'crypto'
 import FormData from 'form-data'
 
@@ -19,7 +19,7 @@ interface Config {
 class SmmsAssets extends Assets {
   types = ['image']
 
-  http: Requester
+  http: Quester
 
   constructor(ctx: Context, public config: Config) {
     super(ctx)
