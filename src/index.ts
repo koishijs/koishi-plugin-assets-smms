@@ -1,4 +1,4 @@
-import { Assets, Context, Schema, Quester } from 'koishi'
+import { Assets, Context, Quester, Schema } from 'koishi'
 import { createHash } from 'crypto'
 import FormData from 'form-data'
 
@@ -8,26 +8,22 @@ declare module 'koishi' {
   }
 }
 
-export const schema = Schema.object({
-  token: Schema.string('sm.ms 的访问令牌。').required(),
-})
-
-interface Config {
-  token: string
-}
-
 class SmmsAssets extends Assets {
   types = ['image']
 
   http: Quester
 
-  constructor(ctx: Context, public config: Config) {
+  constructor(ctx: Context, public config: SmmsAssets.Config) {
     super(ctx)
     this.http = ctx.http.extend({
       endpoint: 'https://sm.ms/api/v2',
       headers: { authorization: config.token },
     })
   }
+
+  start() {}
+
+  stop() {}
 
   async upload(url: string, file: string) {
     const buffer = await this.download(url)
@@ -52,8 +48,14 @@ class SmmsAssets extends Assets {
   }
 }
 
-export const name = 'smms'
+namespace SmmsAssets {
+  export interface Config {
+    token: string
+  }
 
-export function apply(ctx: Context, config: Config) {
-  ctx.assets = new SmmsAssets(ctx, config)
+  export const Config = Schema.object({
+    token: Schema.string('sm.ms 的访问令牌。').required(),
+  })
 }
+
+export default SmmsAssets
