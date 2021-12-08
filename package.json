@@ -1,20 +1,20 @@
 {
   "name": "koishi-plugin-assets-smms",
   "description": "Save static assets on https://sm.ms",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
     "lib"
   ],
-  "author": "Shigma <1700011071@pku.edu.cn>",
+  "author": "Shigma <shigma10826@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/koishijs/koishi.git"
+    "url": "git+https://github.com/koishijs/koishi-plugin-assets-smms.git"
   },
   "bugs": {
-    "url": "https://github.com/koishijs/koishi/issues"
+    "url": "https://github.com/koishijs/koishi-plugin-assets-smms/issues"
   },
   "homepage": "https://github.com/koishijs/koishi-plugin-assets-smms",
   "keywords": [
@@ -29,7 +29,7 @@
     "smms"
   ],
   "peerDependencies": {
-    "koishi": "^4.0.0-beta.2"
+    "koishi": "^4.0.0-beta.4"
   },
   "dependencies": {
     "form-data": "^4.0.0"
