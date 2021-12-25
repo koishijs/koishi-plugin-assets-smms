@@ -29,7 +29,7 @@ class SmmsAssets extends Assets {
     const buffer = await this.download(url)
     const payload = new FormData()
     payload.append('smfile', buffer, file || createHash('sha1').update(buffer).digest('hex'))
-    const data = await this.http('POST', '/upload', payload, payload.getHeaders())
+    const data = await this.http.post('/upload', payload, { headers: payload.getHeaders() })
     if (data.code === 'image_repeated') {
       return data.images
     }
