@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-assets-smms",
   "description": "Save static assets on https://sm.ms",
-  "version": "1.0.0-rc.0",
+  "version": "1.0.0-rc.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -29,7 +29,7 @@
     "smms"
   ],
   "peerDependencies": {
-    "koishi": "^4.0.0-rc.0"
+    "koishi": "^4.0.0-rc.1"
   },
   "dependencies": {
     "form-data": "^4.0.0"
