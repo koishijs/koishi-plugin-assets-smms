@@ -26,9 +26,9 @@ class SmmsAssets extends Assets {
   stop() {}
 
   async upload(url: string, file: string) {
-    const buffer = await this.download(url)
+    const { buffer, filename } = await this.analyze(url, file)
     const payload = new FormData()
-    payload.append('smfile', buffer, file || createHash('sha1').update(buffer).digest('hex'))
+    payload.append('smfile', buffer, filename)
     const data = await this.http.post('/upload', payload, { headers: payload.getHeaders() })
     if (data.code === 'image_repeated') {
       return data.images
