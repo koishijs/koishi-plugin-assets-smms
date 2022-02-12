@@ -54,7 +54,7 @@ namespace SmmsAssets {
   }
 
   export const Config = Schema.object({
-    token: Schema.string().description('sm.ms 的访问令牌。').required(),
+    token: Schema.string().description('sm.ms 的访问令牌。').role('secret').required(),
   })
 }
 
