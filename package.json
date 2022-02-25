@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-assets-smms",
-  "description": "Save static assets on https://sm.ms",
-  "version": "1.0.0-rc.2",
+  "description": "Save Static Assets on [sm.ms](https://sm.ms)",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [

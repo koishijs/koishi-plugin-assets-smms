@@ -1,12 +1,5 @@
 import { Assets, Context, Quester, Schema } from 'koishi'
-import { createHash } from 'crypto'
 import FormData from 'form-data'
-
-declare module 'koishi' {
-  interface Modules {
-    'assets-smms': typeof import('.')
-  }
-}
 
 class SmmsAssets extends Assets {
   types = ['image']
@@ -20,10 +13,6 @@ class SmmsAssets extends Assets {
       headers: { authorization: config.token },
     })
   }
-
-  start() {}
-
-  stop() {}
 
   async upload(url: string, file: string) {
     const { buffer, filename } = await this.analyze(url, file)
